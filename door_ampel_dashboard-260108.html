@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Tür Dashboard</title>
+<style>
+body{font-family:system-ui;margin:20px;background:#f5f5f5}
+.container{max-width:1400px;margin:0 auto}
+.summary{display:flex;gap:20px;margin:20px 0;flex-wrap:wrap}
+.card{background:white;border-radius:8px;padding:20px;min-width:120px;box-shadow:0 2px 4px rgba(0,0,0,0.1);text-align:center}
+.card.red{border-left:5px solid #dc3545}.card.yellow{border-left:5px solid #ffc107}.card.green{border-left:5px solid #28a745}
+.num{font-size:2em;font-weight:bold}
+.filters{margin:20px 0}
+.btn{padding:8px 16px;margin-right:10px;border:none;border-radius:4px;cursor:pointer}
+.btn.active{outline:3px solid #333}
+table{width:100%;border-collapse:collapse;background:white;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+th,td{padding:12px;text-align:left;border-bottom:1px solid #ddd}
+th{background:#f8f9fa}
+tr.red{background:#f4c7c3}tr.yellow{background:#fff2cc}tr.green{background:#c6efce}
+.issue{margin:2px 0;padding:2px 6px;border-radius:3px;font-size:0.85em}
+.issue.red{background:rgba(220,53,69,0.2)}.issue.yellow{background:rgba(255,193,7,0.2)}
+.hidden{display:none}
+</style></head><body>
+<div class="container">
+<h1>🚪 Tür Ampel Dashboard</h1>
+<div class="summary">
+<div class="card"><div class="num">57</div><div>Total</div></div>
+<div class="card red"><div class="num">7</div><div>🔴 Kritisch</div></div>
+<div class="card yellow"><div class="num">37</div><div>🟡 Warnung</div></div>
+<div class="card green"><div class="num">13</div><div>🟢 OK</div></div>
+</div>
+<div class="filters">
+<button class="btn active" style="background:#e0e0e0" onclick="filter('all')">Alle</button>
+<button class="btn" style="background:#f4c7c3" onclick="filter('red')">🔴 Kritisch</button>
+<button class="btn" style="background:#fff2cc" onclick="filter('yellow')">🟡 Warnung</button>
+<button class="btn" style="background:#c6efce" onclick="filter('green')">🟢 OK</button>
+</div>
+<table><thead><tr><th>ID</th><th>Name</th><th>Raum</th><th>Geschoss</th><th>Breite</th><th>Höhe</th><th>Status</th><th>Issues</th></tr></thead><tbody>
+<tr class="yellow" data-s="yellow"><td>0yeZSZRU...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2pF_Gsot...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>0nloUkMe...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>17_jUpvv...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2PHBopPa...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>3Hz1pe8a...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>3tTEIoQs...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>1kREV0BC...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>3L1Wmq83...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2yX0akMe...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>07Qe_kkC...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>1pkZOqFx...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="red" data-s="red"><td>0g_1xC8w...</td><td>Type 00.01</td><td>-</td><td>00 Ground floor</td><td>995</td><td>2355</td><td><b>RED</b></td><td><div class="issue red">RED: Breite < 1000 mm (unplausibel)</div><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="red" data-s="red"><td>2iYnqQc1...</td><td>Type 00.01</td><td>-</td><td>00 Ground floor</td><td>995</td><td>2355</td><td><b>RED</b></td><td><div class="issue red">RED: Breite < 1000 mm (unplausibel)</div><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="red" data-s="red"><td>1AD6VlF7...</td><td>Type 00.01</td><td>-</td><td>00 Ground floor</td><td>995</td><td>2355</td><td><b>RED</b></td><td><div class="issue red">RED: Breite < 1000 mm (unplausibel)</div><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>3iyOwfRf...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2taGOtiB...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2QyIvwBm...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="red" data-s="red"><td>1OzqBAid...</td><td>Type 01.01</td><td>-</td><td>01 First floor</td><td>995</td><td>2355</td><td><b>RED</b></td><td><div class="issue red">RED: Breite < 1000 mm (unplausibel)</div><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="red" data-s="red"><td>0Nu8UoHh...</td><td>Type 01.01</td><td>-</td><td>01 First floor</td><td>995</td><td>2355</td><td><b>RED</b></td><td><div class="issue red">RED: Breite < 1000 mm (unplausibel)</div><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="red" data-s="red"><td>3TPSLk03...</td><td>Type 01.01</td><td>-</td><td>01 First floor</td><td>995</td><td>2355</td><td><b>RED</b></td><td><div class="issue red">RED: Breite < 1000 mm (unplausibel)</div><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2qX8D8SP...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>0wB_7sUW...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>3KJptzkS...</td><td>Type 00.03</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>0g92fj_q...</td><td>Type 00.02s</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>0LWXaaA4...</td><td>Type 00.02s</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="red" data-s="red"><td>2e0hyi4e...</td><td>Type 00.02s</td><td>-</td><td>00 Ground floor</td><td>900</td><td>2355</td><td><b>RED</b></td><td><div class="issue red">RED: Breite < 1000 mm (unplausibel)</div><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>1JJz78sl...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2b1VTgPa...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>3Y_BFLDr...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>3EL1ABfY...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2_9dg8GN...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>15WxPxyf...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>0UpFDqAq...</td><td>Type 01.02</td><td>-</td><td>01 First floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="green" data-s="green"><td>1naOnMy3...</td><td>Type 01.09</td><td>-</td><td>01 First floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="green" data-s="green"><td>3gcxRgNz...</td><td>Type 01.08</td><td>-</td><td>01 First floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="green" data-s="green"><td>3J0TyhOS...</td><td>Type 01.08</td><td>-</td><td>01 First floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="yellow" data-s="yellow"><td>3hSp8m8j...</td><td>Type 00.02s</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="green" data-s="green"><td>0DJnpeFZ...</td><td>Type 00.06</td><td>-</td><td>00 Ground floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="yellow" data-s="yellow"><td>1JEVLaP$...</td><td>Type 00.03</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>1ss7yEk8...</td><td>Type 00.02s</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>2_FxpXWs...</td><td>Type 00.02</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>0VVDpZAj...</td><td>Type 00.02s</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="green" data-s="green"><td>3zWu48rF...</td><td>Type 00.05</td><td>-</td><td>00 Ground floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="green" data-s="green"><td>1Y9UR2ng...</td><td>Type 01.09</td><td>-</td><td>01 First floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="green" data-s="green"><td>3kOfq3Hw...</td><td>Type 01.05</td><td>-</td><td>01 First floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="green" data-s="green"><td>0ab7580L...</td><td>Type 01.05</td><td>-</td><td>01 First floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="green" data-s="green"><td>2D8jxFky...</td><td>Type 01.05</td><td>-</td><td>01 First floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="green" data-s="green"><td>2VdwqqNQ...</td><td>Type 01.06</td><td>-</td><td>01 First floor</td><td>1740</td><td>2700</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="yellow" data-s="yellow"><td>3cj1ZB_n...</td><td>Type 02.07s</td><td>-</td><td>02 Second floor</td><td>2200</td><td>2367</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>33qWHuUc...</td><td>Type 02.07</td><td>-</td><td>02 Second floor</td><td>2200</td><td>2367</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>0Q2A1giR...</td><td>Type F</td><td>-</td><td>00 Ground floor</td><td>1764</td><td>2367</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="green" data-s="green"><td>3jsTasR8...</td><td>Type E</td><td>-</td><td>01 First floor</td><td>3100</td><td>2650</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="yellow" data-s="yellow"><td>2B$iqPhv...</td><td>Type 02.02s</td><td>-</td><td>02 Second floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="yellow" data-s="yellow"><td>3GK2GZfk...</td><td>Type 00.04</td><td>-</td><td>00 Ground floor</td><td>1010</td><td>2355</td><td><b>YELLOW</b></td><td><div class="issue yellow">YELLOW: Höhe < 2400 mm</div></td></tr>
+<tr class="green" data-s="green"><td>0XJg5$7c...</td><td>Curtain wall door</td><td>-</td><td>-</td><td>None</td><td>None</td><td><b>GREEN</b></td><td>✓</td></tr>
+<tr class="green" data-s="green"><td>0nxOWNnw...</td><td>Curtain wall door</td><td>-</td><td>-</td><td>None</td><td>None</td><td><b>GREEN</b></td><td>✓</td></tr>
+</tbody></table>
+<p style="color:#999;margin-top:20px">Generated: 2026-01-08 10:55</p>
+</div>
+<script>
+function filter(s){document.querySelectorAll('.btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');
+document.querySelectorAll('tbody tr').forEach(r=>r.classList.toggle('hidden',s!='all'&&r.dataset.s!=s));}
+</script></body></html>
